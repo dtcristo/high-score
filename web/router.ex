@@ -14,13 +14,14 @@ defmodule HighScore.Router do
   end
 
   scope "/", HighScore do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", HighScore do
-  #   pipe_through :api
-  # end
+  scope "/api", HighScore do
+    pipe_through :api
+
+    resources "/scores", ScoreController, only: [:index, :create]
+  end
 end
