@@ -10,6 +10,7 @@ defmodule HighScore.Router do
   end
 
   pipeline :api do
+    plug CORSPlug
     plug :accepts, ["json"]
   end
 
@@ -23,5 +24,6 @@ defmodule HighScore.Router do
     pipe_through :api
 
     resources "/scores", ScoreController, only: [:index, :create, :show]
+    get "/time", TimeController, :current
   end
 end
