@@ -6,7 +6,10 @@ defmodule HighScore.ScoreController do
   plug :scrub_params, "score" when action in [:create, :update]
 
   def index(conn, _params) do
-    scores = Repo.all(Score)
+    scores = Repo.all from s in Score,
+                      order_by: [desc: s.value],
+                      limit: 10
+
     render(conn, "index.json", scores: scores)
   end
 
