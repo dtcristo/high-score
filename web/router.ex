@@ -22,6 +22,6 @@ defmodule HighScore.Router do
   scope "/api", HighScore do
     pipe_through :api
 
-    resources "/scores", ScoreController, only: [:index, :create]
+    resources "/scores", ScoreController, only: [:index, :create, :show]
   end
 end
