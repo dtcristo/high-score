@@ -17,7 +17,7 @@ defmodule HighScore.Router do
   scope "/", HighScore do
     pipe_through :browser
 
-    get "/", PageController, :index
+    # get "/", PageController, :index
   end
 
   scope "/api", HighScore do
