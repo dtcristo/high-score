@@ -12,6 +12,8 @@ defmodule HighScore.ScoreView do
   def render("score.json", %{score: score}) do
     %{id: score.id,
       name: score.name,
-      value: score.value}
+      value: score.value,
+      rank: score.rank,
+      inserted_at: score.inserted_at}
   end
 end
