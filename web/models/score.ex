@@ -4,12 +4,13 @@ defmodule HighScore.Score do
   schema "scores" do
     field :name, :string
     field :value, :integer
+    field :rank, :integer, virtual: true
 
     timestamps
   end
 
   @required_fields ~w(name value)
-  @optional_fields ~w()
+  @optional_fields ~w(rank)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
