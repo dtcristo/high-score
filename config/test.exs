@@ -10,10 +10,13 @@ config :high_score, HighScore.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :high_score, HighScore.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "high_score_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+  adapter: Sqlite.Ecto,
+  database: "high_score_test.sqlite3"
+
+# config :high_score, HighScore.Repo,
+#   adapter: Ecto.Adapters.Postgres,
+#   username: "postgres",
+#   password: "postgres",
+#   database: "high_score_test",
+#   hostname: "localhost",
+#   pool: Ecto.Adapters.SQL.Sandbox
