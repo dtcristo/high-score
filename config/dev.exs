@@ -34,9 +34,13 @@ config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
 config :high_score, HighScore.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "high_score_dev",
-  hostname: "localhost",
-  pool_size: 10
+  adapter: Sqlite.Ecto,
+  database: "high_score_dev.sqlite3"
+
+# config :high_score, HighScore.Repo,
+#   adapter: Ecto.Adapters.Postgres,
+#   username: "postgres",
+#   password: "postgres",
+#   database: "high_score_dev",
+#   hostname: "localhost",
+#   pool_size: 10
